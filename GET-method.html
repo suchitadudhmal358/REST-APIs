@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>APIs - HTTP Requests - GET Methods</title>
+  </head>
+  <body>
+    <script>
+      const weather = async () => {
+        let p = await fetch("https://goweather.herokuapp.com/weather/Ny");
+        const response = await p.json();
+        console.log(response);
+      };
+
+      // GET Method
+      const getRequest = async () => {
+        //  Get single User data
+        let getSingleUser = await fetch(
+          "https://jsonplaceholder.typicode.com/posts/1"
+        );
+        const response = await getSingleUser.json();
+        console.log(response);
+      };
+
+      const getAllResources = async () => {
+        // Get all data
+        let getSingleUser = await fetch(
+          "https://jsonplaceholder.typicode.com/posts"
+        );
+        const response = await getSingleUser.json();
+        console.log(response);
+      };
+
+      getRequest();
+      getAllResources();
+    </script>
+  </body>
+</html>
